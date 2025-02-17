@@ -1,14 +1,14 @@
-"use client"; // Client-side React hooks
-import { Button } from "../../components/ui/button";
-import { Input } from "../../components/ui/input";
+"use client";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { auth } from "../../lib/firebaseConfig";
+import { auth } from "../lib/firebaseConfig";
 
-const Login = () => {
+const LoginPage = () => {
   const { control, handleSubmit } = useForm<LoginFormData>();
   const [error, setErrorMessage] = useState("");
   const [isClient, setIsClient] = useState(false);
@@ -98,4 +98,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
